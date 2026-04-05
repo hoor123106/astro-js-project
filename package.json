@@ -1,0 +1,19 @@
+{
+  "name": "astro-google-sheets",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "predev": "node scripts/fetch-notes.js",
+    "prebuild": "node scripts/fetch-notes.js"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^3.1.8",
+    "astro": "^4.15.8",
+    "csv-parse": "^5.5.6"
+  }
+}

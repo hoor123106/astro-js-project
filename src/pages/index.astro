@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const notes = await getCollection('notes');
+---
+
+<Layout title="Fragrance Notes Directory">
+	<header>
+        <h1>Fragrance <span class="text-gradient">Notes</span> Directory</h1>
+        <p>A dynamically generated encyclopedia of fragrance notes fetched directly from Google Sheets.</p>
+    </header>
+    
+    <div class="grid">
+        {notes.map((note) => (
+            <a href={`/notes/${note.slug}`} class="card">
+                <h2>{note.data.title}</h2>
+                <span class="group-badge">{note.data.group}</span>
+                <p>{note.data.odorProfile?.substring(0, 120)}...</p>
+            </a>
+        ))}
+    </div>
+</Layout>
+
+<style>
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 0.5rem;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+    header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    .card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+    }
+    .card h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #1e293b;
+    }
+    .card p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #64748b;
+    }
+    .group-badge {
+        display: inline-block;
+        background: rgba(var(--accent-light), 0.3);
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: rgb(var(--accent-dark));
+        align-self: flex-start;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+</style>

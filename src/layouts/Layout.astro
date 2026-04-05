@@ -1,0 +1,70 @@
+---
+interface Props {
+	title: string;
+    description?: string;
+}
+
+const { title, description = 'Astro Google Sheets dynamic site' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+		<title>{title}</title>
+	</head>
+	<body>
+        <main>
+		    <slot />
+        </main>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 236, 72, 153;        /* Pink 500 */
+		--accent-light: 252, 165, 211; /* Pink 300 */
+		--accent-dark: 157, 23, 77;    /* Pink 800 */
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent-dark)),
+			rgb(var(--accent)) 30%,
+			white 60%
+		);
+        --bg-color: #ffffff;
+        --text-color: #334155;
+	}
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+		background: var(--bg-color);
+        color: var(--text-color);
+	}
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+    main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    h1, h2, h3, h4 {
+        color: #1e293b;
+    }
+    p {
+        line-height: 1.6;
+        color: #475569;
+    }
+    a {
+        color: rgb(var(--accent));
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>

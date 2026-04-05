@@ -1,0 +1,137 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const notes = await getCollection('notes');
+	return notes.map(note => ({
+		params: { slug: note.slug },
+		props: { note },
+	}));
+}
+
+const { note } = Astro.props;
+const { Content } = await note.render();
+---
+
+<Layout title={note.data.pageTitle || note.data.title} description={note.data.metaDescription}>
+	<div class="note-container">
+        <a href="/" class="back-link">← Back to Directory</a>
+        <header class="note-header">
+            <span class="badge">{note.data.group}</span>
+            <h1>{note.data.title}</h1>
+        </header>
+
+        {note.data.odorProfile && (
+            <div class="odor-profile">
+                <h3>Odor Profile</h3>
+                <p>{note.data.odorProfile}</p>
+            </div>
+        )}
+
+        <div class="mdx-content">
+            <Content />
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .note-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .back-link {
+        display: inline-block;
+        margin-bottom: 2rem;
+        color: #64748b;
+        font-weight: 600;
+    }
+    .note-header {
+        margin-bottom: 2rem;
+    }
+    .note-header h1 {
+        font-size: 3.5rem;
+        margin: 0;
+        margin-top: 0.5rem;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .badge {
+        background: rgba(var(--accent), 0.1);
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: rgb(var(--accent-dark));
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .odor-profile {
+        background: rgba(var(--accent-light), 0.15);
+        border-left: 4px solid rgb(var(--accent));
+        padding: 1.5rem;
+        border-radius: 0 12px 12px 0;
+        margin-bottom: 2.5rem;
+    }
+    .odor-profile h3 {
+        margin-top: 0;
+        color: rgb(var(--accent-dark));
+    }
+    .odor-profile p {
+        color: #334155;
+    }
+    .mdx-content :global(h2) {
+        margin-top: 3rem;
+        border-bottom: 2px solid #f1f5f9;
+        padding-bottom: 0.5rem;
+        color: #1e293b;
+        font-size: 1.8rem;
+    }
+    .mdx-content :global(p) {
+        font-size: 1.05rem;
+        color: #475569;
+    }
+    .mdx-content :global(ul) {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .mdx-content :global(li) {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #475569;
+    }
+    .mdx-content :global(li::before) {
+        content: "✿";
+        position: absolute;
+        left: 0;
+        color: rgb(var(--accent));
+        font-size: 0.9em;
+    }
+    .mdx-content :global(.faq-section) {
+        background: #fdf2f8;
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-top: 1rem;
+    }
+    .mdx-content :global(.faq-section p) {
+        margin-bottom: 1rem;
+    }
+</style>
+
+<script>
+    // FAQ Interactivity & Formatting
+    document.addEventListener("DOMContentLoaded", () => {
+        const faqSection = document.querySelector('.faq-section');
+        if (faqSection) {
+            // Check if user has FAQ schema/script requests
+            console.log("FAQ Section loaded.");
+            // We can parse the text to format Q&A if it's plain text dashes
+            const html = faqSection.innerHTML;
+            const formatted = html.replace(/- Q:/gi, '<strong>Q:</strong>')
+                                  .replace(/- A:/gi, '<strong>A:</strong>');
+            faqSection.innerHTML = formatted;
+        }
+    });
+</script>
