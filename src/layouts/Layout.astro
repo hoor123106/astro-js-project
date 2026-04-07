@@ -5,9 +5,6 @@ interface Props {
 }
 
 const { title, description = 'Astro Google Sheets dynamic site' } = Astro.props;
-
-// Import the font to get its URL for the @font-face
-import interFont from '../assets/fonts/Inter.woff2';
 ---
 
 <!doctype html>
@@ -27,18 +24,10 @@ import interFont from '../assets/fonts/Inter.woff2';
 	</body>
 </html>
 <style is:global>
-    @font-face {
-        font-family: 'Inter Variable';
-        src: var(--interFontUrl) format('woff2');
-        font-weight: 100 900;
-        font-style: normal;
-        font-display: swap;
-    }
-
 	:root {
-		--accent: 236, 72, 153;        /* Pink 500 */
-		--accent-light: 252, 165, 211; /* Pink 300 */
-		--accent-dark: 157, 23, 77;    /* Pink 800 */
+		--accent: 236, 72, 153;        
+		--accent-light: 252, 165, 211; 
+		--accent-dark: 157, 23, 77;   
 		--accent-gradient: linear-gradient(
 			45deg,
 			rgb(var(--accent-dark)),
@@ -46,21 +35,24 @@ import interFont from '../assets/fonts/Inter.woff2';
 			white 60%
 
 		);
-          --font-main: var(--font-inter);
+        /* Explicitly use the variable from astro.config.mjs */
+        --font-main: var(--font-inter);
         --bg-color: #ffffff;
-        --text-color: #334155;
-        --font-inter: 'Inter Variable', system-ui, sans-serif;
+        --text-color: #0f172a; /* Deeper for a "bold" feel */
 	}
 	html {
-    font-family: var(--font-main), system-ui, sans-serif;
+        font-family: var(--font-main), system-ui, sans-serif;
 		background: var(--bg-color);
         color: var(--text-color);
-        
+        font-weight: 500;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
 	}
     body {
         margin: 0;
         padding: 0;
         min-height: 100vh;
+        font-style: normal !important; /* Force no italics */
     }
     main {
         max-width: 900px;
@@ -68,11 +60,17 @@ import interFont from '../assets/fonts/Inter.woff2';
         padding: 2rem;
     }
     h1, h2, h3, h4 {
-        color: #1e293b;
+        color: #000000; /* Max contrast for headers */
+        font-weight: 900; /* Maximum bold */
+        line-height: 1.1;
+        margin-top: 2.5rem;
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.02em;
     }
     p {
-        line-height: 1.6;
-        color: #475569;
+        line-height: 1.7;
+        color: #1e293b;
+        margin-bottom: 1.5rem;
     }
     a {
         color: rgb(var(--accent));

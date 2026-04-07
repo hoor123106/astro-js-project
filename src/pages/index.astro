@@ -12,20 +12,24 @@ const notes = await getCollection('notes');
     </header>
     
     <div class="grid">
-        {notes.map((note) => (
-            <a href={`/notes/${note.slug}`} class="card">
-                <h2>{note.data.title}</h2>
-                <span class="group-badge">{note.data.group}</span>
-                <p>{note.data.odorProfile?.substring(0, 120)}...</p>
-            </a>
-        ))}
+        {notes.map((note) => {
+            const slug = note.id.replace(/\.(md|mdx)$/, '');
+    return (
+   <a href={`/notes/${slug}`} class="card">
+            <h2>{note.data.title}</h2>
+            <span class="group-badge">{note.data.group}</span>
+            <p>{note.data.odorProfile?.substring(0, 120)}...</p>
+        </a>
+    );
+})}
     </div>
 </Layout>
 
 <style>
 	h1 {
+		font-family: var(--font-inter), system-ui;
 		font-size: 3rem;
-		font-weight: 800;
+		font-weight: 900;
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 0.5rem;
@@ -47,6 +51,7 @@ const notes = await getCollection('notes');
         gap: 1.5rem;
     }
     .card {
+		font-family: var(--font-inter), sans-serif;
         background: #ffffff;
         border: 1px solid #e2e8f0;
         border-radius: 12px;
@@ -65,12 +70,14 @@ const notes = await getCollection('notes');
     .card h2 {
         margin: 0;
         font-size: 1.5rem;
-        color: #1e293b;
+        color: #0f172a;
+        font-weight: 800;
     }
     .card p {
         margin: 0;
-        font-size: 0.9rem;
-        color: #64748b;
+        font-size: 0.95rem;
+        color: #334155;
+        font-weight: 500;
     }
     .group-badge {
         display: inline-block;
