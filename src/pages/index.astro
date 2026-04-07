@@ -10,19 +10,6 @@ const notes = await getCollection('notes');
         <h1>Fragrance <span class="text-gradient">Notes</span> Directory</h1>
         <p>A dynamically generated encyclopedia of fragrance notes fetched directly from Google Sheets.</p>
     </header>
-    
-    <div class="grid">
-        {notes.map((note) => {
-            const slug = note.id.replace(/\.(md|mdx)$/, '');
-    return (
-   <a href={`/notes/${slug}`} class="card">
-            <h2>{note.data.title}</h2>
-            <span class="group-badge">{note.data.group}</span>
-            <p>{note.data.odorProfile?.substring(0, 120)}...</p>
-        </a>
-    );
-})}
-    </div>
 </Layout>
 
 <style>
@@ -45,50 +32,5 @@ const notes = await getCollection('notes');
         text-align: center;
         margin-bottom: 3rem;
     }
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1.5rem;
-    }
-    .card {
-		font-family: var(--font-inter), sans-serif;
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 12px;
-        padding: 1.5rem;
-        transition: transform 0.2s, box-shadow 0.2s;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    }
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        text-decoration: none;
-    }
-    .card h2 {
-        margin: 0;
-        font-size: 1.5rem;
-        color: #0f172a;
-        font-weight: 800;
-    }
-    .card p {
-        margin: 0;
-        font-size: 0.95rem;
-        color: #334155;
-        font-weight: 500;
-    }
-    .group-badge {
-        display: inline-block;
-        background: rgba(var(--accent-light), 0.3);
-        padding: 0.2rem 0.6rem;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        color: rgb(var(--accent-dark));
-        align-self: flex-start;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
+   
 </style>
