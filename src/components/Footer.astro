@@ -1,10 +1,15 @@
 ---
 import '../styles/footer.css';
+import logo from '../assets/images/logo.png';
+import { Image } from 'astro:assets';
 ---
 
 <footer class="footer">
   <div class="footer-top">
-    <div class="footer-logo">mimya</div>
+    <!-- Replace text with logo image -->
+   <a href="/" class="logo">
+    <Image src={logo} alt="mimya" width={120} height={40} />
+    </a>
   </div>
 
   <nav class="footer-nav">

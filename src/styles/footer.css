@@ -8,13 +8,11 @@
   margin-bottom: 30px;
   text-align: center;
 }
-
-.footer-logo {
-  font-size: 32px;
-  font-family: 'Dancing Script', cursive;
-  color: #9333ea;
-  font-weight: 700;
+.logo img {
+  height: 38px;
+  width: auto;
 }
+
 
 .footer-nav {
   display: flex;
