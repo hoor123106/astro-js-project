@@ -3,7 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
-  const notes = await getCollection('notes');
+const notes = await getCollection('notes');
 
   return notes.map(note => ({
     params: { slug: note.id.replace(/\.(md|mdx)$/, '') },
@@ -12,7 +12,6 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const notes = await getCollection('notes');
 const note = notes.find((n) => n.id.replace(/\.(md|mdx)$/, '') === slug);
-
 if (!note) {
   throw new Error(`Note not found for slug: ${slug}`);
 }

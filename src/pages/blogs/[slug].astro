@@ -1,0 +1,125 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const blogs = await getCollection('blogs');
+  return blogs.map(blog => ({
+    params: { slug: blog.data.slug },
+    props: { blog },
+  }));
+}
+
+const { blog } = Astro.props;
+const { Content } = await render(blog);
+---
+
+<Layout title={blog.data.title} description={blog.data.excerpt}>
+  <div class="blog-container">
+    <a href="/blogs" class="back-link">← Back to Blog</a>
+
+    <header class="blog-header">
+      <div class="blog-meta">
+        <span class="badge">{blog.data.categories}</span>
+        <span class="date">{blog.data.date}</span>
+      </div>
+      <h1>{blog.data.title}</h1>
+      <p class="author">
+        By {blog.data.authorFirstName} {blog.data.authorLastName}
+      </p>
+    </header>
+
+    {blog.data.excerpt && (
+      <div class="excerpt">
+        <p>{blog.data.excerpt}</p>
+      </div>
+    )}
+
+    <div class="mdx-content">
+      <Content />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: var(--font-inter), sans-serif;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+  .blog-header {
+    margin-bottom: 2rem;
+  }
+  .blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .badge {
+    background: rgba(var(--accent), 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: rgb(var(--accent-dark));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .date {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-weight: 500;
+  }
+  .blog-header h1 {
+    font-size: 3rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 900;
+    line-height: 1.1;
+    color:rgb(180, 19, 118);
+  }
+  .author {
+    color: #64748b;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .excerpt {
+    background: rgba(var(--accent-light), 0.15);
+    border-left: 4px solid rgb(var(--accent));
+    padding: 1.5rem;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 2.5rem;
+  }
+  .excerpt p {
+    margin: 0;
+    color: #334155;
+    font-size: 1.1rem;
+    font-style: italic;
+  }
+  .mdx-content :global(h2) {
+    margin-top: 3rem;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  .mdx-content :global(p) {
+    font-size: 1.1rem;
+    color: #1e293b;
+    line-height: 1.8;
+  }
+  .mdx-content :global(ul), .mdx-content :global(ol) {
+    padding-left: 1.5rem;
+    color: #334155;
+  }
+  .mdx-content :global(li) {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+  }
+</style>
