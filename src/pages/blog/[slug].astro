@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import '../../styles/content.css';
 
 export async function getStaticPaths() {
   const blogs = await getCollection('blogs');
@@ -15,18 +16,16 @@ const { Content } = await render(blog);
 ---
 
 <Layout title={blog.data.title} description={blog.data.excerpt}>
-  <div class="blog-container">
-    <a href="/blogs" class="back-link">← Back to Blog</a>
+  <div class="content-container">
+    <a href="/blog" class="content-back-link">← Back to Blog</a>
 
-    <header class="blog-header">
-      <div class="blog-meta">
-        <span class="badge">{blog.data.categories}</span>
-        <span class="date">{blog.data.date}</span>
+    <header class="content-header">
+      <div class="content-meta">
+        <span class="pill-badge">{blog.data.categories}</span>
+        <span class="content-date">{blog.data.date}</span>
       </div>
       <h1>{blog.data.title}</h1>
-      <p class="author">
-        By {blog.data.authorFirstName} {blog.data.authorLastName}
-      </p>
+      <p class="content-date">By {blog.data.authorFirstName} {blog.data.authorLastName}</p>
     </header>
 
     {blog.data.excerpt && (
