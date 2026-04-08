@@ -11,14 +11,49 @@ export default defineConfig({
       options: {
         variants: [
           {
-            src: ['./src/assets/fonts/Inter-VariableFont_opsz,wght.ttf'],
-            weight: '100 900',
-            style: 'normal',
+            src: ['./src/assets/fonts/static/Inter_24pt-Thin.ttf'],
+            weight: '100',
+            style: 'normal'
           },
           {
-            src: ['./src/assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf'],
-            weight: '100 900',
-            style: 'italic',
+            src: ['./src/assets/fonts/static/Inter_24pt-ExtraLight.ttf'],
+            weight: '200',
+            style: 'normal'
+          },
+          {
+            src: ['./src/assets/fonts/static/Inter_24pt-Light.ttf'],
+            weight: '300',
+            style: 'normal'
+          },
+          {
+            src: ['./src/assets/fonts/static/Inter_24pt-Regular.ttf'],
+            weight: '400',
+            style: 'normal'
+          },
+          {
+            src: ['./src/assets/fonts/static/Inter_24pt-Medium.ttf'],
+            weight: '500',
+            style: 'normal'
+          },
+          {
+            src: ['./src/assets/fonts/static/Inter_24pt-SemiBold.ttf'],
+            weight: '600',
+            style: 'normal'
+          },
+          {
+            src: ['./src/assets/fonts/static/Inter_24pt-Bold.ttf'],
+            weight: '700',
+            style: 'normal'
+          },
+          {
+            src: ['./src/assets/fonts/static/Inter_24pt-ExtraBold.ttf'],
+            weight: '800',
+            style: 'normal'
+          },
+          {
+            src: ['./src/assets/fonts/static/Inter_24pt-Black.ttf'],
+            weight: '900',
+            style: 'normal'
           }
         ]
       }
