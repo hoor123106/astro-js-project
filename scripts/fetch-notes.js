@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { parse } from 'csv-parse/sync';
 
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/1VA2w8eHFEA_EYb-J-r3ddbIakQWleQ-kPWfZHlGB2RY/export?format=csv';
+const SHEET_URL =
+  'https://docs.google.com/spreadsheets/d/1VA2w8eHFEA_EYb-J-r3ddbIakQWleQ-kPWfZHlGB2RY/gviz/tq?tqx=out:csv&gid=1876307699';
 
 function escapeMDX(str) {
   if (!str) return '';
@@ -13,6 +14,9 @@ async function fetchAndGenerate() {
   console.log('Fetching Google Sheet data...');
   const response = await fetch(SHEET_URL);
   const csvText = await response.text();
+  if (!response.ok) {
+    throw new Error(`Sheet fetch failed: ${response.status}\nFirst bytes: ${JSON.stringify(csvText.slice(0, 160))}`);
+  }
 
   const records = parse(csvText, {
     columns: true,
@@ -21,7 +25,6 @@ async function fetchAndGenerate() {
 
   const contentDir = path.join(process.cwd(), 'src', 'content', 'notes');
 
-  // Cleanup existing files to handle deletions from the sheet
   if (fs.existsSync(contentDir)) {
     console.log('Cleaning old MDX files for sync...');
     const files = fs.readdirSync(contentDir);
@@ -83,7 +86,6 @@ async function fetchAndGenerate() {
       mdxContent += `## Sustainability\n\n${escapeMDX(row.sustanability)}\n\n`;
     }
     if (row.seasonality) {
-      // Strip out li and ul tags 
       const cleanedSeasonality = row.seasonality.replace(/<\/?(li|ul)[^>]*>/gi, '').trim();
       mdxContent += `## Seasonality\n\n${escapeMDX(cleanedSeasonality)}\n\n`;
     }
@@ -99,7 +101,6 @@ async function fetchAndGenerate() {
         faqHTML = faqHTML.replace(match[0], '').trim();
         scriptBlock = `\n\n<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ${JSON.stringify(match[1])} }} />\n\n`;
 
-        // If the user only provided the JSON script in the sheet, generate visual text from it automatically
         if (!faqHTML) {
           try {
             const parsedData = JSON.parse(match[1].trim());
@@ -109,7 +110,6 @@ async function fetchAndGenerate() {
               });
             }
           } catch (e) {
-            // Ignore JSON parse errors
           }
         }
       }

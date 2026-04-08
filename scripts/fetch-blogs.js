@@ -14,7 +14,6 @@ function sanitizeHtmlForMDX(str) {
   let out = str.replace(/<!--\s*\/?wp:[^>]*-->\s*/g, '');
   out = out.replace(/<!DOCTYPE[^>]*>\s*/gi, '');
 
-  // MDX parses inline HTML as JSX; "void" tags must be self-closing.
   out = out.replace(/<img\b([^>]*)>/gi, (match, attrs) => (match.endsWith('/>') ? match : `<img${attrs} />`));
   out = out.replace(/<br\b([^>]*)>/gi, (match, attrs) => (match.endsWith('/>') ? match : `<br${attrs} />`));
   out = out.replace(/<hr\b([^>]*)>/gi, (match, attrs) => (match.endsWith('/>') ? match : `<hr${attrs} />`));
@@ -45,10 +44,8 @@ async function fetchAndGenerate() {
   }
 
   records.forEach((row, index) => {
-    // Slug column (W) se filename banana
     let slug = row['Slug']?.trim();
 
-    // Fallback: Permalink se slug nikalna
     if (!slug && row['Permalink']) {
       try {
         const urlObj = new URL(row['Permalink']);
@@ -59,7 +56,6 @@ async function fetchAndGenerate() {
     slug = (slug || `blog-${index}`).replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-+|-+$/g, '').toLowerCase();
     if (!slug) return;
 
-    // Status check — sirf published blogs
     if (row['Status'] && row['Status'].trim() !== 'publish') return;
 
     const frontmatter = {

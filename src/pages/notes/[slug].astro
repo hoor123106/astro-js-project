@@ -29,7 +29,7 @@ const { Content } = await render(note);
 
         {note.data.odorProfile && (
             <div class="odor-profile">
-                <h3>Odor Profile</h3>
+                <h2>Odor Profile</h2>
                 <p>{note.data.odorProfile}</p>
             </div>
         )}
@@ -82,7 +82,7 @@ const { Content } = await render(note);
         border-radius: 0 12px 12px 0;
         margin-bottom: 2.5rem;
     }
-    .odor-profile h3 {
+    .odor-profile h2 {
         margin-top: 0;
         color: rgb(var(--accent-dark));
     }
@@ -131,13 +131,10 @@ const { Content } = await render(note);
 </style>
 
 <script>
-    // FAQ Interactivity & Formatting
     document.addEventListener("DOMContentLoaded", () => {
         const faqSection = document.querySelector('.faq-section');
         if (faqSection) {
-            // Check if user has FAQ schema/script requests
             console.log("FAQ Section loaded.");
-            // We can parse the text to format Q&A if it's plain text dashes
             const html = faqSection.innerHTML;
             const formatted = html.replace(/- Q:/gi, '<strong>Q:</strong>')
                                   .replace(/- A:/gi, '<strong>A:</strong>');
