@@ -11,9 +11,14 @@ export default defineConfig({
       options: {
         variants: [
           {
-            src: ['./src/assets/fonts/Inter.woff2'],
+            src: ['./src/assets/fonts/Inter-VariableFont_opsz,wght.ttf'],
             weight: '100 900',
-            style: 'normal'
+            style: 'normal',
+          },
+          {
+            src: ['./src/assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf'],
+            weight: '100 900',
+            style: 'italic',
           }
         ]
       }

@@ -24,6 +24,7 @@
 
 .text-gradient {
   background-image: var(--accent-gradient);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 400%;
@@ -146,7 +147,8 @@
 
 .perfume-badge.year {
   background: #f1f5f9;
-  color: #64748b;
+  /* Darker for WCAG contrast on light bg */
+  color: #334155;
 }
 
 .perfume-card-opening {
@@ -155,6 +157,7 @@
   line-height: 1.5;
   margin: 0;
   display: -webkit-box;
+  line-clamp: 2;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -162,7 +165,8 @@
 
 .perfume-card-notes {
   font-size: 0.8rem;
-  color: #94a3b8;
+  /* Darker for WCAG contrast */
+  color: #475569;
   margin-top: auto;
   padding-top: 0.5rem;
   border-top: 1px solid #f1f5f9;

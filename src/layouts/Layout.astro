@@ -34,6 +34,9 @@ const { title, description = 'Astro Google Sheets dynamic site' } = Astro.props;
 		--accent: 236, 72, 153;        
 		--accent-light: 252, 165, 211; 
 		--accent-dark: 157, 23, 77;   
+        --muted-text: #475569;
+        --muted-text-2: #334155;
+        --border-color: #e2e8f0;
 		--accent-gradient: linear-gradient(
 			45deg,
 			rgb(var(--accent-dark)),
@@ -50,7 +53,7 @@ const { title, description = 'Astro Google Sheets dynamic site' } = Astro.props;
         font-family: var(--font-main), system-ui, sans-serif;
 		background: var(--bg-color);
         color: var(--text-color);
-        font-weight: 500;
+        font-weight: 550;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
 	}
@@ -75,7 +78,7 @@ const { title, description = 'Astro Google Sheets dynamic site' } = Astro.props;
     }
     p {
         line-height: 1.7;
-        color: #1e293b;
+        color: var(--muted-text-2);
         margin-bottom: 1.5rem;
     }
     a {
