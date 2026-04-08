@@ -43,7 +43,7 @@
 
 .footer-copy {
   font-size: 13px;
-  color: #888;
+  color: #1a1a1a;
 }
 
 .footer-links {
@@ -55,10 +55,10 @@
 
 .footer-links a {
   text-decoration: none;
-  color: #555;
+  color: #1d1c1c;
   font-size: 13px;
 }
 
 .footer-links a:hover {
-  color: #cc44aa;
+  color: #1f0017;
 }
