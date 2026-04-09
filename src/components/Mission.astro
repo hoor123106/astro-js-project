@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import missionImg from '../assets/images/our-mission.png';
+import '../styles/Mission.css';
+---
+
+<section class="mission">
+  <div class="container mission__container">
+    <div class="mission__content">
+      <span class="mission__label">Our Mission</span>
+      <h2 class="mission__title">We Are On A Mission To <br/> Preserve And Celebrate The <br/> Art Of Perfumery For Everyone.</h2>
+      <p class="mission__text">
+        Scent is a powerful form of memory, emotion, and identity. It is an art form that deserves to be explored and understood. Our goal is to create a vibrant community space where fragrance lovers can connect, share their knowledge, and deepen their appreciation for the invisible art that colors our lives.
+      </p>
+      <p class="mission__text">
+        From the latest industry news and trend reports to deep dives into the history of legendary perfume houses, we are your center hub for all things fragrance. We believe that by providing rich, accurate information, we empower you to make more informed choices and find scents that truly resonate with your soul.
+      </p>
+    </div>
+
+    <div class="mission__side">
+      <div class="mission__image-wrap">
+        <Image src={missionImg} alt="Our mission visual" class="mission__image" loading="lazy" decoding="async" />
+      </div>
+      <div class="mission__quote">
+        <p class="mission__quote-text">
+          "I was completely lost trying to find a birthday gift for my partner, who is very particular about his perfumes. Using the "Search by Notes" feature, I was able to find fragrances with his favorite combination of rose and oud!"
+        </p>
+        <p class="mission__quote-author">Anastasia</p>
+        <p class="mission__quote-role">Texas, USA</p>
+      </div>
+    </div>
+  </div>
+</section>

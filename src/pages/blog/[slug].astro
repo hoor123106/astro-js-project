@@ -39,12 +39,11 @@ const { Content } = await render(blog);
     </div>
   </div>
 </Layout>
-
 <style>
   .blog-container {
     max-width: 800px;
     margin: 0 auto;
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-poppins, "Poppins"), sans-serif;
   }
   .back-link {
     display: inline-block;
@@ -79,13 +78,13 @@ const { Content } = await render(blog);
   .blog-header h1 {
     font-size: 3rem;
     margin: 0 0 0.5rem 0;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1.1;
     color:rgb(180, 19, 118);
   }
   .author {
     color: #64748b;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
   }
   .excerpt {
@@ -99,19 +98,21 @@ const { Content } = await render(blog);
     margin: 0;
     color: #334155;
     font-size: 1.1rem;
-    font-style: italic;
+    font-style: normal;
+    font-weight: 400;
   }
   .mdx-content :global(h2) {
     margin-top: 3rem;
     border-bottom: 2px solid #f1f5f9;
     padding-bottom: 0.5rem;
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 700;
   }
   .mdx-content :global(p) {
     font-size: 1.1rem;
     color: #1e293b;
     line-height: 1.8;
+    font-weight: 400;
   }
   .mdx-content :global(ul), .mdx-content :global(ol) {
     padding-left: 1.5rem;

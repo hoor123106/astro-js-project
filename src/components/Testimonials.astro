@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import t1 from '../assets/images/testimonial1.png';
+import t2 from '../assets/images/testimonial2.png';
+import t3 from '../assets/images/testimonial3.png';
+import '../styles/Testimonials.css';
+
+const testimonials = [
+  {
+    img: t1,
+    name: "Alex Chen",
+    location: "New York, NY",
+    text: "“This website has become my go-to resource. The level of detail on each perfume is astounding. I’ve discovered so many new favorites thanks to the ‘search by note’ feature. An invaluable tool for any collector!”"
+  },
+  {
+    img: t2,
+    name: "Maria Garcia",
+    location: "Miami, FL",
+    text: "“I’m new to the world of fragrance, and this site made it so approachable. The blog posts are fantastic for learning, and I finally understand the difference between an Eau de Parfum and an Eau de Toilette!”"
+  },
+  {
+    img: t3,
+    name: "Ben Carter",
+    location: "London, UK",
+    text: "“As a blogger, having accurate information is crucial. I trust this database completely. It’s clear that it was built by people who genuinely love and respect the art of perfumery. A class act.”"
+  }
+];
+---
+
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials__header">
+      <span class="testimonials__label">Testimonials</span>
+      <h2 class="testimonials__title">What Our Community Says</h2>
+      <p class="testimonials__subtitle">Here’s what fellow fragrance lovers are saying about our platform.</p>
+    </div>
+    
+    <div class="testimonials__grid">
+      {testimonials.map((item) => (
+        <div class="testimonial-card">
+          <p class="testimonial-card__text">{item.text}</p>
+          <div class="testimonial-card__author">
+            <Image src={item.img} alt={item.name} class="testimonial-card__avatar" />
+            <div class="testimonial-card__meta">
+              <h3 class="testimonial-card__name">{item.name}</h3>
+              <span class="testimonial-card__location">{item.location}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

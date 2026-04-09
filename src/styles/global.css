@@ -1,0 +1,138 @@
+:root {
+  /* Color System - Pink Luxury */
+  --color-primary: #ff85b2;
+  --color-primary-dark: #d45d8b;
+  --color-soft-blush: #fed5e4;
+  --color-nude: #faf5f6;
+  --color-white: #ffffff;
+  
+  /* Text Colors */
+  --color-text-main: #2d2327;
+  --color-text-secondary: #5b4d52;
+  --color-text-light: #7f7176;
+  
+  /* Gradints */
+  --gradient-pink: linear-gradient(135deg, #ff85b2 0%, #d45d8b 100%);
+  --gradient-soft: linear-gradient(180deg, #ffffff 0%, #faf5f6 100%);
+  --btn-primary-start: #be63ab;
+  --btn-primary-end: #f15b98;
+  --btn-primary-hover-start: #b85aa5;
+  --btn-primary-hover-end: #ea4f8f;
+  
+  /* Spacing & Borders */
+  --shadow-soft: 0 10px 30px rgba(255, 133, 178, 0.1);
+  --section-padding: 72px 20px;
+  --container-max-width: 1200px;
+
+  /* Typography variables are already defined in astro.config.mjs */
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-poppins, "Poppins"), sans-serif;
+  color: var(--color-text-main);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins, "Poppins"), sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  border-radius: 0;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: var(--section-padding);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.text-pink {
+  color: var(--color-primary);
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 5px;
+  font-family: var(--font-poppins, "Poppins"), sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none;
+  font-size: 1rem;
+  text-decoration: none !important;
+}
+
+button {
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--btn-primary-start) 0%, var(--btn-primary-end) 100%);
+  color: white;
+  border: 1px solid var(--btn-primary-start);
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.22);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, var(--btn-primary-hover-start) 0%, var(--btn-primary-hover-end) 100%);
+  border-color: var(--btn-primary-hover-start);
+  box-shadow: 0 8px 22px rgba(236, 72, 153, 0.26);
+  color: white;
+  text-decoration: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 48px 16px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}

@@ -5,9 +5,10 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description?: string;
+  fullWidth?: boolean;
 }
 
-const { title, description = 'Astro Google Sheets dynamic site' } = Astro.props;
+const { title, description = 'Astro Google Sheets dynamic site', fullWidth = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,7 +23,7 @@ const { title, description = 'Astro Google Sheets dynamic site' } = Astro.props;
   </head>
   <body>
     <Header />       
-    <main>
+    <main class={fullWidth ? 'layout-main layout-main--full' : 'layout-main'}>
       <slot />
     </main>
     <Footer />      
@@ -45,15 +46,15 @@ const { title, description = 'Astro Google Sheets dynamic site' } = Astro.props;
 
 		);
         /* Explicitly use the variable from astro.config.mjs */
-        --font-main: var(--font-inter);
+        --font-main: var(--font-poppins);
         --bg-color: #ffffff;
         --text-color: #0f172a; /* Deeper for a "bold" feel */
 	}
 	html {
-        font-family: var(--font-main), system-ui, sans-serif;
+        font-family: var(--font-poppins, "Poppins"), sans-serif;
 		background: var(--bg-color);
         color: var(--text-color);
-        font-weight: 550;
+        font-weight: 600;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
 	}
@@ -63,10 +64,14 @@ const { title, description = 'Astro Google Sheets dynamic site' } = Astro.props;
         min-height: 100vh;
         font-style: normal !important; /* Force no italics */
     }
-    main {
+    .layout-main {
         max-width: 900px;
         margin: 0 auto;
         padding: 2rem;
+    }
+    .layout-main--full {
+        max-width: 100%;
+        padding: 0;
     }
     h1, h2, h3, h4 {
         color: #000000; /* Max contrast for headers */

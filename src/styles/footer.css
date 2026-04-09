@@ -28,7 +28,9 @@
   text-decoration: none;
   color: #2c2c3e;
   font-size: 14px;
-  font-weight: 500;
+  font-family: var(--font-poppins, "Poppins"), sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .footer-nav a:hover {
@@ -44,6 +46,8 @@
 .footer-copy {
   font-size: 13px;
   color: #1a1a1a;
+  font-family: var(--font-poppins, "Poppins"), sans-serif;
+  font-weight: 600;
 }
 
 .footer-links {
@@ -57,8 +61,33 @@
   text-decoration: none;
   color: #1d1c1c;
   font-size: 13px;
+  font-family: var(--font-poppins, "Poppins"), sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .footer-links a:hover {
   color: #1f0017;
+}
+
+@media (max-width: 992px) {
+  .footer {
+    padding: 30px 24px 24px;
+  }
+  .footer-nav {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-links {
+    align-items: center;
+  }
 }

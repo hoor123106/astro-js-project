@@ -1,36 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import Hero from '../components/Hero.astro';
+import AboutUs from '../components/AboutUs.astro';
+import Database from '../components/Database.astro';
+import Satisfaction from '../components/Satisfaction.astro';
+import Features from '../components/Features.astro';
+import FeaturedFragrances from '../components/FeaturedFragrances.astro';
+import Mission from '../components/Mission.astro';
+import Testimonials from '../components/Testimonials.astro';
+import '../styles/global.css';
 
-const notes = await getCollection('notes');
+const title = "Luxury Fragrance - Your Ultimate Scent Guide";
+const description = "Discover the world's largest database of perfumes, notes, and brands. Elegant, luxury fragrance guide.";
 ---
 
-<Layout title="Fragrance Notes Directory">
-	<header>
-        <h1>Fragrance <span class="text-gradient">Notes</span> Directory</h1>
-        <p>A dynamically generated encyclopedia of fragrance notes fetched directly from Google Sheets.</p>
-    </header>
+<Layout title={title} description={description} fullWidth={true}>
+  <main class="home-main">
+    <Hero />
+    <AboutUs />
+    <Database />
+    <Satisfaction />
+    <Features />
+    <FeaturedFragrances />
+    <Mission />
+    <Testimonials />
+  </main>
 </Layout>
 
 <style>
-	h1 {
-		font-family: var(--font-inter), system-ui;
-		font-size: 3rem;
-		font-weight: 900;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 0.5rem;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-    header {
-        text-align: center;
-        margin-bottom: 3rem;
-    }
-   
+  .home-main {
+    overflow-x: hidden;
+  }
 </style>

@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import databaseImg from '../assets/images/perfume3_home.png';
+import '../styles/Database.css';
+---
+
+<section class="database">
+  <div class="container database__container">
+    <div class="database__content">
+      <p class="database__label">Our Database</p>
+      <h2 class="database__quote">
+        &ldquo;The Most Exhaustive And Beautifully Organized Perfume Site On The Web.&rdquo;
+      </h2>
+      <p class="database__author">The Scent Enthusiast Magazine</p>
+    </div>
+    
+    <div class="database__visual">
+      <div class="database__image-wrapper">
+        <Image
+          src={databaseImg}
+          alt="Perfume database visualization"
+          class="database__image"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </div>
+</section>

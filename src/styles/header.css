@@ -30,7 +30,9 @@
   text-decoration: none;
   color: #2c2c3e;
   font-size: 15px;
-  font-weight: 500;
+  font-family: var(--font-poppins, "Poppins"), sans-serif;
+  font-weight: 700;
+  font-style: normal;
   letter-spacing: 0.01em;
 }
 
@@ -55,4 +57,29 @@
   color: #9333ea;
   text-decoration: none;
   font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    gap: 20px;
+    padding: 14px 12px;
+    flex-wrap: wrap;
+  }
+  .nav-link {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    justify-content: center;
+    gap: 14px;
+  }
+  .logo {
+    order: -1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
 }

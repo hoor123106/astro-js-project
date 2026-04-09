@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import mainImg from '../assets/images/Prodcut-Making-In-home.png';
+import allFragrancesImg from '../assets/images/all_iamges-fragnances.png';
+import '../styles/Features.css';
+---
+
+<section class="features">
+  <div class="container features__container">
+    <div class="features__visual">
+      <div class="features__main-img-wrapper">
+        <Image src={mainImg} alt="Production Process" class="features__main-img" />
+      </div>
+      <div class="features__grid">
+        <Image src={allFragrancesImg} alt="Fragrance image collection" class="features__grid-img" />
+      </div>
+    </div>
+    
+    <div class="features__content">
+      <span class="features__label">Key Features</span>
+      <h2 class="features__title">Explore Every Facet <br /> Of Fragrance</h2>
+      
+      <div class="features__list">
+        <div class="features__item">
+          <div class="features__bullet"></div>
+          <div class="features__item-text">
+            <h3>IN-DEPTH PERFUME PROFILES</h3>
+            <p>Go beyond the marketing. For every fragrance, find its launch year, the perfumer who created it, the bottle designer, and a detailed scent pyramid. We provide the complete story behind the scent.</p>
+          </div>
+        </div>
+        
+        <div class="features__item">
+          <div class="features__bullet"></div>
+          <div class="features__item-text">
+            <h3>MASTER THE SCENT NOTES</h3>
+            <p>Our interactive note explorer allows you to discover the characteristics of individual ingredients. Learn what they smell like, where they come from, and see a list of all the perfumes in our database that feature them.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+import aboutImg from '../assets/images/HeroPerfume_section-2.png';
+import '../styles/AboutUs.css';
+---
+
+<section class="about">
+  <div class="container about__container">
+    <div class="about__visual">
+      <div class="about__image-container">
+        <Image
+          src={aboutImg}
+          alt="Luxury perfume collection"
+          class="about__image"
+          loading="lazy"
+          decoding="async"
+          sizes="(max-width: 992px) 100vw, 520px"
+        />
+      </div>
+    </div>
+    
+    <div class="about__content">
+      <p class="about__label">About Us</p>
+      <h2 class="about__title">The Ultimate Fragrance <br /> Compendium</h2>
+      
+      <div class="about__description">
+        <div class="about__accent-bar"></div>
+        <p>
+          We are a team of passionate collectors, historians, and scent enthusiasts dedicated to creating the most comprehensive fragrance resource online. Our mission is to document and share the art, science, and history of perfumery, making it accessible to everyone, from the curious novice to the seasoned connoisseur.
+        </p>
+      </div>
+      
+      <a href="/perfume" class="btn btn-primary about__btn">Explore Perfumes</a>
+    </div>
+  </div>
+</section>

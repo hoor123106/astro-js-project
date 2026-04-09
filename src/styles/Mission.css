@@ -1,0 +1,110 @@
+.mission {
+  background: linear-gradient(135deg, #5a4b66 0%, #4a3d56 100%);
+  padding: 64px 0;
+  color: #ffffff;
+}
+
+.mission__container {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 42px;
+  align-items: start;
+}
+
+.mission__content {
+  max-width: 560px;
+}
+
+.mission__label {
+  color: #ff6493;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-size: 0.78rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.mission__title {
+  font-size: 37px;
+  margin-bottom: 27px;
+  line-height: 1.25;
+  color: white;
+  max-width: 540px;
+  font-weight: 700;
+
+}
+
+.mission__text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+
+.mission__side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mission__image-wrap {
+  width: 100%;
+}
+
+.mission__image {
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 4px;
+}
+
+.mission__quote {
+  border-left: 4px solid #ff6493;
+  padding-left: 25px;
+  margin-left: 29px;
+}
+
+.mission__quote-text {
+  font-size: 14px;
+  padding-top: 10px;
+  line-height: 1.55;
+  margin: 0 0 8px 0;
+  color: white;
+  font-family: var(--font-poppins, "Poppins"), sans-serif;
+}
+
+.mission__quote-author {
+  color: #ff6493;
+  font-weight: 700;
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+.mission__quote-role {
+  margin: 0;
+  opacity: 0.85;
+  font-size: 12px;
+  color: white;
+  font-family: var(--font-poppins, "Poppins"), sans-serif;
+}
+
+@media (max-width: 992px) {
+  .mission__container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .mission__content {
+    max-width: 100%;
+  }
+
+  .mission__title {
+    font-size: 2.2rem;
+  }
+
+  .mission__quote {
+    margin-left: 0;
+  }
+}
