@@ -1,9 +1,8 @@
 .satisfaction {
-  background-color: #db1165f1;
+  background-color: var(--color-primary); /* Solid Deep Pink */
   padding: 50px 20px;
   color: white;
 }
-
 .satisfaction__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -21,7 +20,7 @@
 }
 
 .satisfaction__icon {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
   width: 70px;
   height: 70px;
   border-radius: 18px;

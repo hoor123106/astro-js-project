@@ -1,30 +1,25 @@
 :root {
-  /* Color System - Pink Luxury */
-  --color-primary: #ff85b2;
-  --color-primary-dark: #d45d8b;
-  --color-soft-blush: #fed5e4;
+  --color-primary: #be185d; 
+  --color-primary-dark: #9d174d;
+  --color-soft-blush: #fdf2f8;
   --color-nude: #faf5f6;
   --color-white: #ffffff;
   
-  /* Text Colors */
-  --color-text-main: #2d2327;
-  --color-text-secondary: #5b4d52;
-  --color-text-light: #7f7176;
+  --color-text-main: #111827;
+  --color-text-secondary: #374151;
+  --color-text-light: #6b7280;
   
-  /* Gradints */
-  --gradient-pink: linear-gradient(135deg, #ff85b2 0%, #d45d8b 100%);
+  --gradient-pink: linear-gradient(135deg, #be185d 0%, #9d174d 100%);
   --gradient-soft: linear-gradient(180deg, #ffffff 0%, #faf5f6 100%);
-  --btn-primary-start: #be63ab;
-  --btn-primary-end: #f15b98;
-  --btn-primary-hover-start: #b85aa5;
-  --btn-primary-hover-end: #ea4f8f;
   
-  /* Spacing & Borders */
-  --shadow-soft: 0 10px 30px rgba(255, 133, 178, 0.1);
+  --btn-primary-start: #be185d;
+  --btn-primary-end: #db2777;
+  --btn-primary-hover-start: #9d174d;
+  --btn-primary-hover-end: #be185d;
+  
+  --shadow-soft: 0 10px 30px rgba(190, 24, 93, 0.1);
   --section-padding: 72px 20px;
   --container-max-width: 1200px;
-
-  /* Typography variables are already defined in astro.config.mjs */
 }
 
 /* Base Resets */

@@ -48,14 +48,18 @@
   font-style: normal;
   padding-bottom: 6px;
   transition: color 0.2s ease;
+  text-decoration: none !important;
+
 }
 
 .footer-nav a:hover {
-  color: #480838;
+  color: var(--color-primary-dark);
+  text-decoration: none !important;
 }
 
 .footer-nav a.is-active {
-  color: #ff2f6e;
+  text-decoration: none !important;
+  color: var(--color-primary);
 }
 
 .footer-bottom {
@@ -69,7 +73,7 @@
 
 .footer-copy {
   font-size: 13px;
-  color: #1a1a1a;
+  color: var(--color-text-main);
   font-family: var(--font-poppins, "Poppins"), sans-serif;
   font-weight: 600;
 }

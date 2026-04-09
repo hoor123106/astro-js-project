@@ -94,17 +94,17 @@
 }
 
 .nav-link:hover {
-  color: #300225;
+  color: var(--color-primary-dark);
   text-decoration: none !important;
 }
 
 .nav-link:hover::after {
   transform: scaleX(1);
+  background: var(--color-primary); 
 }
 
 .nav-link.is-active {
-  color: #ff2f6e;
-  text-decoration: none !important;
+  color: var(--color-primary) !important;  text-decoration: none !important;
 }
 
 .nav-link:focus,

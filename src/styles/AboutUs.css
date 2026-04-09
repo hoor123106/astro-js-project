@@ -32,14 +32,13 @@
 }
 
 .about__label {
-  color: #ff2f6e;
+  color: var(--color-primary); /* Global variable use karein jo humne #be185d rakha hai */
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-size: 0.85rem;
   margin: 0;
 }
-
 .about__title {
   font-size: 3rem;
   color: var(--color-text-main);

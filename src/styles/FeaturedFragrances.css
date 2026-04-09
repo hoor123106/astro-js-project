@@ -9,12 +9,11 @@
 }
 
 .fragrances__label {
-  color: #ff2f6e;
+  color: var(--color-primary);
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-size: 0.85rem;
-  margin: 0;
 }
 
 .fragrances__title {
