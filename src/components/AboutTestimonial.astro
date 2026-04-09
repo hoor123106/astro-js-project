@@ -1,10 +1,20 @@
 ---
 import { Image } from 'astro:assets';
 import authorImg from '../assets/images/testimonial1.png';
+import bgImg from '../assets/images/testimonial_about.png'; 
 import '../styles/about-testimonial.css';
 ---
 
 <section class="about-testimonial">
+  <Image 
+    src={bgImg} 
+    alt="" 
+    aria-hidden="true" 
+    class="about-testimonial__bg"
+    loading="lazy"
+    decoding="async"
+  />
+  
   <div class="about-testimonial__container">
     <div class="about-testimonial__card">
       <div class="about-testimonial__stars">
