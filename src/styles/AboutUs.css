@@ -32,7 +32,7 @@
 }
 
 .about__label {
-  color: var(--color-primary); /* Global variable use karein jo humne #be185d rakha hai */
+  color: var(--color-primary);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1.5px;

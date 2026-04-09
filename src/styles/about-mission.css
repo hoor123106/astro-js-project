@@ -30,7 +30,7 @@
 }
 
 .about-mission__label {
-  color: #ff2f6e;
+  color: var(--color-primary);
   font-weight: 900;
   font-size: 14px;
   margin-bottom: 12px;

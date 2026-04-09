@@ -104,7 +104,8 @@
 }
 
 .nav-link.is-active {
-  color: var(--color-primary) !important;  text-decoration: none !important;
+  color: var(--color-primary) !important; 
+   text-decoration: none !important;
 }
 
 .nav-link:focus,

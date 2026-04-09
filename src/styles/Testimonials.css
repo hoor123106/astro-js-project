@@ -9,7 +9,7 @@
 }
 
 .testimonials__label {
-  color: #ff2f6e;
+  color: var(--color-primary);
   font-weight: 800;
   text-transform: capitalize;
   font-size: 1rem;
@@ -23,7 +23,7 @@
 }
 
 .testimonials__subtitle {
-  color: rgb(95, 95, 95);
+  color: var(--color-text-secondary);
   font-size: 16px;
   max-width: 600px;
   margin: 0 auto;
