@@ -20,7 +20,7 @@
 }
 
 .database__label {
-  color: #ff6493;
+  color: #ff2f6e;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -37,7 +37,7 @@
 }
 
 .database__author {
-  color: #ff6493;
+  color: #ff2f6e;
   font-weight: 800;
   letter-spacing: 1.5px;
   font-size: 0.85rem;

@@ -30,7 +30,7 @@
 }
 
 .about-mission__label {
-  color: #ff6493;
+  color: #ff2f6e;
   font-weight: 900;
   font-size: 14px;
   margin-bottom: 12px;
@@ -77,7 +77,7 @@
 }
 
 .about-mission__dot-icon circle {
-  fill: #ff6493;
+  fill: #ff2f6e;
 }
 
 .about-mission__dot-icon path {

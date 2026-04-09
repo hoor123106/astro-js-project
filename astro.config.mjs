@@ -3,6 +3,9 @@ import mdx from '@astrojs/mdx';
 
 export default defineConfig({
   integrations: [mdx()],
+  build: {
+    inlineStylesheets: 'always'
+  },
   fonts: [
     {
       provider: fontProviders.local(),

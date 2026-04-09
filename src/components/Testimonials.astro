@@ -40,7 +40,15 @@ const testimonials = [
         <div class="testimonial-card">
           <p class="testimonial-card__text">{item.text}</p>
           <div class="testimonial-card__author">
-            <Image src={item.img} alt={item.name} class="testimonial-card__avatar" />
+            <Image
+              src={item.img}
+              alt={item.name}
+              class="testimonial-card__avatar"
+              loading="lazy"
+              decoding="async"
+              widths={[48, 64, 80]}
+              sizes="64px"
+            />
             <div class="testimonial-card__meta">
               <h3 class="testimonial-card__name">{item.name}</h3>
               <span class="testimonial-card__location">{item.location}</span>

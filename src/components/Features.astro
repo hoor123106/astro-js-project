@@ -9,10 +9,26 @@ import '../styles/Features.css';
   <div class="container features__container">
     <div class="features__visual">
       <div class="features__main-img-wrapper">
-        <Image src={mainImg} alt="Production Process" class="features__main-img" />
+        <Image
+          src={mainImg}
+          alt="Production Process"
+          class="features__main-img"
+          loading="lazy"
+          decoding="async"
+          widths={[320, 480, 550, 644]}
+          sizes="(max-width: 992px) 100vw, 550px"
+        />
       </div>
       <div class="features__grid">
-        <Image src={allFragrancesImg} alt="Fragrance image collection" class="features__grid-img" />
+        <Image
+          src={allFragrancesImg}
+          alt="Fragrance image collection"
+          class="features__grid-img"
+          loading="lazy"
+          decoding="async"
+          widths={[320, 480, 640, 800]}
+          sizes="(max-width: 992px) 100vw, 520px"
+        />
       </div>
     </div>
     

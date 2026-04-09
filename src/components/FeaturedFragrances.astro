@@ -38,7 +38,15 @@ const fragrances = [
           aria-label={`Open ${item.name} image preview`}
         >
           <div class="fragrance-card__image-wrapper">
-            <Image src={item.img} alt={item.name} class="fragrance-card__image" />
+            <Image
+              src={item.img}
+              alt={item.name}
+              class="fragrance-card__image"
+              loading="lazy"
+              decoding="async"
+              widths={[160, 240, 320]}
+              sizes="(max-width: 640px) 45vw, (max-width: 992px) 28vw, 220px"
+            />
           </div>
           <div class="fragrance-card__info">
             <h3 class="fragrance-card__name">{item.name}</h3>

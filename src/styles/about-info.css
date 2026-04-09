@@ -21,7 +21,7 @@
   margin-bottom: 12px;
   font-size: 14px;
   font-weight: 800;
-  color: #ff6493;
+  color: #ff2f6e;
 }
 
 .about-info__title {
@@ -32,7 +32,7 @@
 }
 
 .about-info__summary {
-  border-left: 4px solid #ff6493;
+  border-left: 4px solid #ff2f6e;
   padding: 10px 0 10px 24px;
 }
 
@@ -63,7 +63,7 @@
   width: 50px;
   height: 50px;
   margin: 0 auto 20px;
-  background: #ff6493;
+  background: #ff2f6e;
   border-radius: 10px;
   display: flex;
   align-items: center;

@@ -9,7 +9,7 @@
 }
 
 .testimonials__label {
-  color: #ff6493;
+  color: #ff2f6e;
   font-weight: 800;
   text-transform: capitalize;
   font-size: 1rem;
@@ -76,16 +76,16 @@
 }
 
 .testimonial-card__name {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ff6493;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
   font-style: italic;
   margin: 0;
 }
 
 .testimonial-card__location {
   font-size: 0.85rem;
-  color: #a0aec0;
+  color: #000000;
   font-style: italic;
   font-weight: 500;
 }

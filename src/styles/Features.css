@@ -44,7 +44,7 @@
 }
 
 .features__label {
-  color: #ff6493;
+  color: #ff2f6e;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -75,7 +75,7 @@
 .features__bullet {
   width: 16px;
   height: 16px;
-  background-color: #ff6493;
+  background-color: #ff2f6e;
   border-radius: 50%;
   flex-shrink: 0;
   margin-top: 4px;

@@ -2,30 +2,46 @@
 import '../styles/footer.css';
 import logo from '../assets/images/logo.png';
 import { Image } from 'astro:assets';
+
+const currentPath = Astro.url.pathname;
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/perfume', label: 'Perfume' },
+  { href: '/fragrance', label: 'Fragrance Notes' },
+  { href: '/about', label: 'About Us' },
+  { href: '/contact', label: 'Contacts' },
+  { href: '/blog', label: 'Blog' }
+];
+
+const isActive = (href) => {
+  if (href === '/') return currentPath === '/';
+  return currentPath === href || currentPath.startsWith(`${href}/`);
+};
 ---
 
 <footer class="footer">
   <div class="footer-top">
-    <!-- Replace text with logo image -->
-   <a href="/" class="logo">
-    <Image src={logo} alt="mimya" width={120} height={40} />
+    <a href="/" class="logo" aria-label="Mimya home">
+      <Image src={logo} alt="mimya" width={120} height={40} />
     </a>
   </div>
 
-  <nav class="footer-nav">
-    <a href="/">Home</a>
-    <a href="/perfume">Perfume</a>
-    <a href="/fragrance">Fragrance Notes</a>
-    <a href="/about">About Us</a>
-    <a href="/contact">Contacts</a>
-    <a href="/blog">Blog</a>
+  <nav class="footer-nav" aria-label="Footer navigation">
+    <ul class="footer-nav-list">
+      {
+        navItems.map((item) => (
+          <li>
+            <a href={item.href} class={isActive(item.href) ? 'is-active' : ''}>
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </nav>
 
   <div class="footer-bottom">
-    <div class="footer-copy">
-      © 2026 mimya.com
-    </div>
-
+    <div class="footer-copy">© 2026 mimya.com</div>
     <div class="footer-links">
       <a href="/privacy">Privacy Policy</a>
       <a href="/terms">Terms & Conditions</a>

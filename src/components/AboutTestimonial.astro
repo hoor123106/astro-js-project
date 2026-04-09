@@ -16,7 +16,15 @@ import '../styles/about-testimonial.css';
       </blockquote>
 
       <div class="about-testimonial__footer">
-        <Image src={authorImg} alt="Catherine Lopez" class="about-testimonial__avatar" />
+        <Image
+          src={authorImg}
+          alt="Catherine Lopez"
+          class="about-testimonial__avatar"
+          loading="lazy"
+          decoding="async"
+          widths={[40, 56, 72]}
+          sizes="56px"
+        />
         <div class="about-testimonial__meta">
           <p class="about-testimonial__author">Catherine Lopez</p>
           <p class="about-testimonial__location">Chesterton, IN</p>

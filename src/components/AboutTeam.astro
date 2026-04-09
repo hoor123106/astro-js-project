@@ -14,7 +14,15 @@ import '../styles/about-team.css';
     </p>
 
     <div class="about-team__visual">
-      <Image src={teamVisual} alt="Team fragrance visual" class="about-team__image" loading="lazy" decoding="async" />
+      <Image
+        src={teamVisual}
+        alt="Team fragrance visual"
+        class="about-team__image"
+        loading="lazy"
+        decoding="async"
+        widths={[480, 768, 1024, 1400]}
+        sizes="(max-width: 992px) 100vw, 860px"
+      />
       <button type="button" class="about-team__play" aria-label="Preview visual">▶</button>
     </div>
 

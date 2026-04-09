@@ -11,7 +11,7 @@
 }
 
 .about-team__label {
-  color: #ff6493;
+  color: #ff2f6e;
   font-weight: 900;
   font-size: 15px;
   margin-bottom: 20px;
@@ -54,7 +54,7 @@
   height: 60px;
   border: none;
   border-radius: 50%;
-  background: #ff6493;
+  background: #ff2f6e;
   color: #ffffff;
   font-size: 20px;
   display: flex;

@@ -16,7 +16,7 @@
 }
 
 .mission__label {
-  color: #ff6493;
+  color: #ff2f6e;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.4px;
@@ -61,7 +61,7 @@
 }
 
 .mission__quote {
-  border-left: 4px solid #ff6493;
+  border-left: 4px solid #ff2f6e;
   padding-left: 25px;
   margin-left: 29px;
 }
@@ -76,7 +76,7 @@
 }
 
 .mission__quote-author {
-  color: #ff6493;
+  color: #ff2f6e;
   font-weight: 700;
   margin: 0;
   font-size: 0.78rem;

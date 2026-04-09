@@ -1,7 +1,8 @@
 .footer {
+  position: relative;
   background-color: #ffffff;
   border-top: 1px solid #f0e0ee;
-  padding: 40px 80px 30px 80px;
+  padding: 40px 24px 30px;
 }
 
 .footer-top {
@@ -15,32 +16,55 @@
 
 
 .footer-nav {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
+  display: block;
   padding: 20px 0;
   border-top: 1px solid #f0e0ee;
   border-bottom: 1px solid #f0e0ee;
   margin-bottom: 20px;
 }
 
+.footer-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 34px;
+}
+
+.footer-nav-list li {
+  list-style: none;
+}
+
 .footer-nav a {
+  position: relative;
+  display: inline-block;
   text-decoration: none;
   color: #2c2c3e;
   font-size: 14px;
   font-family: var(--font-poppins, "Poppins"), sans-serif;
   font-weight: 700;
   font-style: normal;
+  padding-bottom: 6px;
+  transition: color 0.2s ease;
 }
 
 .footer-nav a:hover {
   color: #480838;
 }
 
+.footer-nav a.is-active {
+  color: #ff2f6e;
+}
+
 .footer-bottom {
+  max-width: 1180px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 20px;
 }
 
 .footer-copy {
@@ -74,9 +98,13 @@
   .footer {
     padding: 30px 24px 24px;
   }
-  .footer-nav {
-    gap: 18px;
-    flex-wrap: wrap;
+
+  .footer-nav-list {
+    gap: 16px 24px;
+  }
+
+  .footer-nav a {
+    padding: 8px 0;
   }
 }
 
