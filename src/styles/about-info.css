@@ -21,7 +21,7 @@
   margin-bottom: 12px;
   font-size: 14px;
   font-weight: 800;
-  color: #ff2f6e;
+  color: var(--color-primary);
 }
 
 .about-info__title {
@@ -40,7 +40,7 @@
   margin: 0;
   font-size: 16px;
   line-height: 1.6;
-  color: #4b5563;
+  color: var(--color-text-secondary);
   font-weight: 500;
 }
 
