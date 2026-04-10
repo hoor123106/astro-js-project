@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import '../../styles/notes-index.css';
 
-const notes = await getCollection('notes');
+const notes = await getCollection('fragnanceNotes');
 ---
 
 <Layout title="Fragrance Notes Directory">
@@ -16,7 +16,7 @@ const notes = await getCollection('notes');
         {notes.map((note) => {
             const slug = note.id.replace(/\.(md|mdx)$/, '');
     return (
-   <a href={`/notes/${slug}`} class="card">
+   <a href={`/fragnance-notes/${slug}`} class="card">
             <h2>{note.data.title}</h2>
             <span class="group-badge">{note.data.group}</span>
             <p>{note.data.odorProfile?.substring(0, 120)}...</p>
